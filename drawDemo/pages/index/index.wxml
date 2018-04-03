@@ -1,0 +1,120 @@
+<view class='wrap'>
+  <!-- 头部 -->
+  <view class='header flex'>
+    <image src='/pages/img/header_title.png' class='header_title'></image>
+    <text>- 翻牌最高赢10倍积分 -</text>
+  </view>
+  <!-- 抽奖页面 -->
+  <view class='main'>
+    <view class='main_title flex'>
+      <image src='/pages/img/icon.png'></image>
+      <text>我的积分：</text>
+      <text class='main_title_point'>{{total}}积分</text>
+    </view>
+    <view class='main_draw'>
+      <view wx:for-items='{{prize}}' wx:key='unique' id="{{index}}" bindtap='drawFn' 
+      class="item_content {{animate?'item_'+index:''}} {{turnNum == index?'turn_back':''}}">
+           <image src='/pages/img/item_bg.png' class="item_back"></image>
+        <view class="item flex">
+          <image class='item_img' src='{{item.pimg}}'></image>
+          <text>{{item.pname}}</text>
+        </view>
+      </view>
+    </view>
+    <view class='main_input flex'>
+      <input type='number' placeholder='输入消耗积分（10-1000）' bindinput='inputEvFn' disabled='{{intAble}}' 
+      value='{{inputVal}}' placeholder-style='font-size:24rpx;'></input>
+      <text bindtap='animationFn'>翻牌</text>
+    </view>
+    <view class='main_residue flex'>
+      <text>*今日剩余翻牌次数：</text>
+      <text lcass='main_residue_times'>5次</text>
+    </view>
+  </view>
+  <!-- 中奖信息弹出层 -->
+  <view class='layer' hidden='{{drawClose}}'>
+    <view class='draw_layer flex'>
+      <text class='draw_layer_txt'>{{drawInfo}}</text>
+      <text class='draw_layer_btn' bindtap='drawCloseFn'>我知道了</text>
+      <image class='draw_layer_bg' src='/pages/img/layer_bg.png'></image>
+      <view class='layer_close flex' bindtap='drawCloseFn'>
+        <image src='/pages/img/close.png'></image>
+      </view>
+    </view>
+  </view>
+  <!-- 底部翻牌记录 -->
+  <view class='footer'>
+    <view class='footer_record flex'>
+      <view class='footer_record_title flex'>
+        <text>中奖记录</text>
+        <view></view>
+      </view>
+      <view class='footer_record_content'>
+        <view class='footer_items flex' wx:for-items="{{20}}" wx:key='unique' >
+          <image src='/pages/img/user.png'></image>
+          <view class='footer_record_info flex'>
+            <text class='footer_items_num'>136****5252</text>
+            <text class='footer_items_bottom'>03-16 15:46:39</text>
+          </view>
+          <view class='footer_record_point flex'>
+            <text class='footer_point-top'>翻得：400积分</text>
+            <text class='footer_items_bottom'>(消耗：200积分)</text>
+          </view>
+        </view>
+      </view>
+      <view class='footer_my_record' bindtap='foOpenFn'>
+          查看我的翻牌记录>
+      </view>
+    </view>
+  </view>
+  <view class='wrap_hr'></view>
+  <!-- 翻牌记录弹出层 -->
+  <view class='layer' hidden='{{foClose}}'>
+    <view class='footer_layer_main flex'>
+      <text class='footer_layer_header'>我的翻牌记录</text>
+      <view class='footer_layer_title flex'>
+        <text style='width:275rpx;'>翻牌时间</text>
+        <text style='width:165rpx;'>消耗积分</text>
+        <text style='width:185rpx'>翻牌结果</text>
+      </view>
+      <view class='footer_layer_content'>
+          <view class='footer_layer_items flex' wx:for-items='{{recordFliter}}' wx:key='unique'>
+            <text style='width:275rpx;'>{{item.time}}</text>
+            <text style='width:165rpx;'>{{item.consume}}</text>
+            <text style='width:185rpx;'>{{item.gain}}</text>
+          </view>
+          <view class='footer_layer_hr'></view>
+      </view>
+      <view class='footer_layer_btn flex'>
+        <text bindtap='prevRecordFn'>上一页</text>
+        <text bindtap='nextRecordFn'>下一页</text>
+      </view>
+      <view bindtap='foCloseFn' class='layer_close flex'>
+        <image src='/pages/img/close.png'></image>
+      </view>
+    </view>
+  </view>
+  <!-- 活动规则 -->
+  <view class='nav flex' bindtap='navOpenFn'>
+    <text>活</text> 
+    <text>动</text>
+    <text>规</text>
+    <text>则</text>
+    <text class='nav_icon'>?</text>
+  </view>
+  <!-- 活动规则弹出层 -->
+  <view class='layer' hidden='{{navClose}}'>
+    <view class='nav_layer_main flex'>
+      <text class='nav_layer_title'>活动规则</text>
+      <view class='nav_layer_content flex'>
+        <text>1. 用户可在10-1000区间输入任意值参与积分翻牌，参与一次游戏需扣除相应下注积分每人每天最多翻牌5次</text>
+        <text>2.按用户输入的下注积分值作为参数，最高可获得10倍积分奖励</text>
+        <text>3.积分实时到账，可在“我的-我的积分”查看详情，翻牌获得的积分可在积分商城兑换礼品</text>
+        <text>4.本活动最终归杭州生活网所有，若发现作弊行为，取消该账户的中奖权限</text>
+      </view>
+      <view bindtap='navCloseFn' class='layer_close flex'>
+        <image src='/pages/img/close.png'></image>
+      </view>
+    </view>
+  </view>
+</view>

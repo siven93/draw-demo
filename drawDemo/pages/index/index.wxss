@@ -1,0 +1,471 @@
+.wrap{
+  background:#feefc6;
+}
+/* 头部 */
+.header{
+  width:100%;
+  background:linear-gradient(to right,#f0b102, #d68f03);
+  height:300rpx;
+  flex-direction: column;
+  justify-content: center;
+}
+.header text{
+  color: #fff;
+}
+.header .header_title{
+  margin-bottom:20rpx;
+  width:530rpx;
+  height:110rpx;
+}
+/* 抽奖环节 */
+.main{
+  position:relative;
+  padding:75rpx 56rpx;
+}
+.main_title{
+  width:490rpx;
+  height:60rpx;
+  border-radius:30rpx;
+  justify-content: center;
+  background:#fff;
+  position:absolute;
+  left:130rpx;
+  top:-30rpx;
+}
+.main_title image{
+  width:40rpx;
+  height:43rpx;
+  margin-right:10rpx;
+}
+.main_title_point{
+  color:#ff4239;
+}
+.main_draw{
+  width:630rpx;
+  height:718rpx;
+  position: relative;
+}
+/* 单个奖品 */
+.item_content{
+  position: absolute;
+  width:208rpx;
+  height:228rpx;
+  transform-style: preserve-3d; 
+}
+.item_content:nth-of-type(1){
+  left:0; top:0;
+}
+.item_content:nth-of-type(2){
+  left:215rpx;
+  top:0;
+}
+.item_content:nth-of-type(3){
+  left:430rpx;
+  top:0;
+}
+.item_content:nth-of-type(4){
+  left:0;
+  top:235rpx;
+}
+.item_content:nth-of-type(5){
+  left:215rpx;
+  top:235rpx;
+}
+.item_content:nth-of-type(6){
+  left:430rpx;
+  top:235rpx;
+}
+.item_content:nth-of-type(7){
+  left:0;
+  top:470rpx;
+}
+.item_content:nth-of-type(8){
+  left:215rpx;
+  top:470rpx;
+}
+.item_content:nth-of-type(9){
+  left:430rpx;
+  top:470rpx;
+}
+/* 动画class */
+.item_0{
+  animation: move0 3s 1;
+  animation-fill-mode:forwards;
+}
+.item_1{
+  animation: move1 3s 1;
+  animation-fill-mode:forwards;
+}
+.item_2{
+  animation: move2 3s 1;
+  animation-fill-mode:forwards;
+}
+.item_3{
+  animation: move3 3s 1;
+  animation-fill-mode:forwards;
+}
+.item_4{
+  animation: move4 3s 1;
+  animation-fill-mode:forwards;
+}
+.item_5{
+  animation: move5 3s 1;
+  animation-fill-mode:forwards;
+}
+.item_6{
+  animation: move6 3s 1;
+  animation-fill-mode:forwards;
+}
+.item_7{
+  animation: move7 3s 1;
+  animation-fill-mode:forwards;
+}
+.item_8{
+  animation: move8 3s 1;
+  animation-fill-mode:forwards; 
+}
+.item_content .item{
+  width:184rpx;
+  height:204rpx;
+  border:12rpx solid #ffe797;
+  border-radius: 20rpx;
+  background:#fff;
+  flex-direction: column; 
+  position: absolute;
+  z-index: 2;
+  backface-visibility: hidden;
+}
+.item .item_img{
+  margin-top:20rpx;
+  width:108rpx;
+  height:108rpx;
+}
+.item_content .item_back{
+  width:208rpx;
+  height:228rpx;
+  position: absolute;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+}
+.turn_back{
+  animation: turnBack 1s 1;
+  animation-fill-mode:forwards;
+} 
+.item text{
+  position: absolute;
+  bottom:20rpx;
+}
+/* 翻牌按钮 */
+.main_input{
+  width:620rpx;
+  margin:30rpx 0;
+}
+.main_input input{
+  background:#fff;
+  border-radius:10rpx;
+  width:403rpx;
+  height:95rpx;
+  padding-left:10rpx;
+  margin-right:20rpx;
+}
+.main_input text{
+  background:#ff3f42;
+  width:209rpx;
+  height:95rpx;
+  color:#fff;
+  line-height: 92rpx;
+  text-align:center;
+  border-radius: 10rpx;
+}
+.main_residue{
+  justify-content: center;
+}
+/* 抽奖信息弹出层 */
+.layer{
+  position:fixed;
+  left:0;
+  bottom:0;
+  background: rgba(0, 0, 0, 0.8);
+  height:100%;
+  width:100%;
+  z-index: 2;
+}
+.draw_layer{
+  position: fixed;
+  top:300rpx;
+  left:100rpx;
+  width:550rpx;
+  height:350rpx;
+  background: #fff;
+  border-radius: 20rpx;
+  flex-direction: column;
+}
+.draw_layer_txt{
+  color:#000;
+  margin-top:130rpx;
+  text-align: center;
+}
+.draw_layer_btn{
+  height:70rpx;
+  width:300rpx;
+  background:#ff3e3e;
+  color:#fff;
+  text-align: center;
+  line-height: 70rpx;
+  margin-top:80rpx;
+  border-radius: 50rpx;
+}
+.draw_layer_bg{
+  width:180rpx;
+  height:180rpx;
+  position: absolute;
+  top:-90rpx;
+  left:185rpx;
+}
+/* 底部翻牌记录 */
+.footer{
+  padding:0 37rpx;
+  margin-bottom:50rpx;
+}
+.footer_record{
+  background:#fff;
+  border-radius: 20rpx;
+  flex-direction: column;
+}
+.footer_record_title{
+  margin-top:50rpx;
+  height:100rpx;
+  flex-direction: column;
+}
+.footer_record_title view{
+  height:10rpx;
+  width:70rpx;
+  background: #ffe2a2;
+  border-radius: 10rpx;
+  margin-top:25rpx;
+}
+.footer_record_content{
+  font-size:27rpx;
+  height:680rpx;
+  overflow-y: auto;
+}
+.footer_items{
+  height:135rpx;
+  width:645rpx;
+  justify-content: space-around;
+  border-bottom:1rpx solid #ccc;
+}
+.footer_items image{
+  width:96rpx;
+  height:96rpx;
+}
+.footer_items_bottom{
+  color:#ccc;
+  margin-top:14rpx;
+  font-size:24rpx;
+}
+.footer_point-top{
+  color:#da4b3b;
+}
+.footer_record_info{
+  flex-direction: column;
+}
+.footer_record_point{
+  flex-direction: column;
+}
+.footer_my_record{
+  width:645rpx;
+  height:96rpx;
+  line-height:96rpx;
+  text-align: center;
+}
+/* 底部翻牌记录弹出层 */
+.footer_layer_main{
+  width:620rpx;
+  background:#fff;
+  border-radius: 20rpx;
+  position: fixed;
+  top:240rpx;
+  left:35rpx;
+  padding:0 30rpx;
+  flex-direction: column;
+}
+.footer_layer_header{
+  height:102rpx;
+  border-bottom:2rpx solid #ccc;
+  line-height: 102rpx;
+  width:100%;
+  text-align: center;
+}
+.footer_layer_title{
+  width:620rpx;
+  height:80rpx;
+}
+.footer_layer_title text{
+  text-align:center;
+}
+.footer_layer_content{
+  height:386rpx;
+  overflow-y: hidden;
+}
+.footer_layer_items text{
+  text-align:center;
+  font-size:27rpx;
+  height:62rpx;
+  border-top:1rpx solid #f2f2f2;
+  line-height: 62rpx;
+}
+.footer_layer_hr{
+  width:620rpx;
+  border-top:1rpx solid #f2f2f2;
+}
+.footer_layer_btn{
+  margin-top: 35rpx;
+  width:230rpx;
+  justify-content: space-between;
+  margin-bottom:35rpx;
+}
+.wrap_hr{
+  height:50rpx;
+  width:100%;
+}
+/* 活动规则 */
+.nav{
+  width:70rpx;
+  height:200rpx;
+  background:#ffeab3;
+  border:2rpx solid #fff;
+  border-right: none;
+  box-sizing: border-box;
+  flex-direction: column;
+  position:fixed;
+  right:0;
+  top:195rpx;
+  border-top-left-radius:20rpx;
+  border-bottom-left-radius:20rpx;
+}
+.nav text{
+  height:35rpx;
+}
+.nav_icon{
+  width:35rpx;
+  height:35rpx;
+  border-radius: 50%;
+  background: #ac863d;
+  color:#ffeab3;
+  text-align: center;
+  line-height: 35rpx;
+  margin-top:10rpx;
+}
+/* 活动规则弹出层 */
+.nav_layer_main{
+  width:620rpx;
+  background:#fff;
+  border-radius: 20rpx;
+  position: fixed;
+  top:240rpx;
+  left:35rpx;
+  padding:0 30rpx;
+  flex-direction: column;
+}
+.nav_layer_title{
+  height:102rpx;
+  border-bottom:2rpx solid #ccc;
+  line-height: 102rpx;
+  width:100%;
+  text-align: center;
+  font-size:28rpx;
+}
+.nav_layer_content{
+  flex-direction: column;
+  margin-top:30rpx;
+  padding-left:26rpx;
+}
+.nav_layer_content text{
+  margin-bottom: 40rpx;
+  text-indent: -26rpx;
+}
+.layer_close{
+  width:60rpx;
+  height:60rpx;
+  justify-content: center;
+  position: absolute;
+  right:10rpx;
+  top:10rpx;
+}
+.layer_close image{
+  width:30rpx;
+  height:30rpx;
+}
+/* 动画效果 */ 
+@keyframes move0{
+  0% {transform:translate(0,0) rotateZ(0) rotateY(0); }
+  20%{transform: translate(0,0) rotateZ(0) rotateY(-180deg);}
+  50%{transform: translate(215rpx,235rpx) rotateZ(0) rotateY(-180deg);}
+  75%{transform: translate(215rpx,235rpx) rotateZ(360deg) rotateY(-180deg);}
+  100%{transform: translate(0,0) rotateZ(360deg) rotateY(-180deg);}
+}
+@keyframes move1{
+  0% {transform: translate(0,0) rotateZ(0) rotateY(0);}
+  20%{transform: translate(0,0) rotateZ(0) rotateY(-180deg);}
+  50%{transform:translate(0,235rpx) rotateZ(0) rotateY(-180deg);}
+  75%{transform: translate(0,235rpx) rotateZ(360deg) rotateY(-180deg);}
+  100%{transform:translate(0,0) rotateZ(360deg) rotateY(-180deg);}
+}
+@keyframes move2{
+  0% {transform:translate(0,0) rotateZ(0) rotateY(0);}
+  20%{transform:translate(0,0) rotateZ(0) rotateY(-180deg);}
+  50%{transform:translate(-215rpx,235rpx) rotateZ(0) rotateY(-180deg);}
+  75%{transform: translate(-215rpx,235rpx) rotateZ(360deg) rotateY(-180deg);}
+  100%{transform:translate(0,0) rotateZ(360deg) rotateY(-180deg);}
+}
+@keyframes move3{
+  0% {transform:translate(0,0) rotateZ(0) rotateY(0);}
+  20%{transform:translate(0,0) rotateZ(0) rotateY(-180deg);}
+  50%{transform:translate(215rpx,0) rotateZ(0) rotateY(-180deg);}
+  80%{transform: translate(215rpx,0) rotateZ(360deg) rotateY(-180deg);}
+  100%{transform:translate(0,0) rotateZ(360deg) rotateY(-180deg);}
+}
+@keyframes move4{
+  0% {transform: rotateZ(0) rotateY(0);}
+  20%{transform: rotateZ(0) rotateY(-180deg);}
+  50%{transform: rotateZ(0) rotateY(-180deg)}
+  80%{transform: rotateZ(360deg) rotateY(-180deg);}
+  100%{transform: rotateZ(360deg) rotateY(-180deg);}
+}
+@keyframes move5{
+  0% {transform:translate(0,0) rotateZ(0) rotateY(0);}
+  20%{transform:translate(0,0) rotateZ(0) rotateY(-180deg);}
+  50%{transform:translate(-215rpx,0) rotateZ(0) rotateY(-180deg);}
+  80%{transform: translate(-215rpx,0) rotateZ(360deg) rotateY(-180deg);}
+  100%{transform:translate(0,0) rotateZ(360deg) rotateY(-180deg);}
+}
+@keyframes move6{
+  0% {transform:translate(0,0) rotateZ(0) rotateY(0);}
+  20%{transform:translate(0,0) rotateZ(0) rotateY(-180deg);}
+  50%{transform:translate(215rpx,-235rpx) rotateZ(0) rotateY(-180deg);}
+  85%{transform: translate(215rpx,-235rpx) rotateZ(360deg) rotateY(-180deg);} 
+  100%{transform:translate(0,0) rotateZ(360deg) rotateY(-180deg);}
+}
+@keyframes move7{
+  0% {transform:translate(0,0) rotateZ(0) rotateY(0);}
+  20%{transform:translate(0,0) rotateZ(0) rotateY(-180deg);}
+  50%{transform:translate(0,-235rpx) rotateZ(0) rotateY(-180deg);}
+  85%{transform: translate(0,-235rpx) rotateZ(360deg) rotateY(-180deg);}
+  100%{transform:translate(0,0) rotateZ(360deg) rotateY(-180deg);}
+}
+@keyframes move8{
+  0% {transform:translate(0,0) rotateZ(0) rotateY(0);}
+  20%{transform:translate(0,0) rotateZ(0) rotateY(-180deg);}
+  50%{transform:translate(-215rpx,-235rpx) rotateZ(0) rotateY(-180deg);}
+  85%{transform: translate(-215rpx,-235rpx) rotateZ(360deg) rotateY(-180deg);}
+  100%{transform:translate(0,0) rotateZ(360deg) rotateY(-180deg);}
+}
+@keyframes turnBack{
+ from{
+   transform: rotateY(-180deg);
+ }
+ to{
+   transform: rotateY(0deg);
+ }
+}

@@ -1,0 +1,13 @@
+/**app.wxss**/
+.flex {
+  display: flex;
+  align-items: center;
+}
+view, text{
+  word-wrap: normal;
+  color: #ac863d; 
+  font-family: "华文西黑","宋体";
+  word-break: break-all;
+  font-size:26rpx;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
